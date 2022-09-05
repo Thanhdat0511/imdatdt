@@ -1,0 +1,77 @@
+{
+  "name": "Failed Alert",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ],
+      "id": "9ee141fa-af23-4b6e-abd5-45c9bec01200"
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        560,
+        300
+      ],
+      "id": "879bdfc5-2753-4bc5-be14-f3a2b403034b"
+    },
+    {
+      "parameters": {
+        "from": "+17435001008",
+        "to": "+84346809492",
+        "message": "=Your workflow with ID: {{$node[\"Error Trigger\"].json[\"execution\"][\"id\"]}} and name: {{$node[\"Error Trigger\"].json[\"workflow\"][\"name\"]}} failed to execute.",
+        "options": {}
+      },
+      "name": "Twilio",
+      "type": "n8n-nodes-base.twilio",
+      "position": [
+        740,
+        300
+      ],
+      "typeVersion": 1,
+      "id": "b61372c7-621c-4174-9c0a-3deee9c33553",
+      "credentials": {
+        "twilioApi": {
+          "id": "1",
+          "name": "Twilio account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Twilio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "timezone": "Asia/Saigon",
+    "errorWorkflow": "3"
+  },
+  "id": 14,
+  "tags": [
+    {
+      "id": "1",
+      "name": "Production",
+      "createdAt": "2022-07-26T13:55:17.879Z",
+      "updatedAt": "2022-07-26T13:55:17.879Z"
+    }
+  ]
+}

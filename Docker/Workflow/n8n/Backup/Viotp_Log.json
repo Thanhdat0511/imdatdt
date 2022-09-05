@@ -1,0 +1,172 @@
+{
+  "name": "Viotp Log",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        460,
+        280
+      ],
+      "id": "11853834-9a6b-4c6b-bd72-49aacf4b36e7"
+    },
+    {
+      "parameters": {
+        "url": "https://api.viotp.com/users/balance?token=01ddfbe3f531492ba8d8cfbb3f19e98b",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        1280,
+        300
+      ],
+      "id": "a24c5696-d494-4cf7-a7aa-97de9452cc27"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1004990942455009320/jYIOiYJS6wzA2tH6lYA_M73BWTr4mFEN1fiEsLW7xei59QdhvOydEk84u72iNzviIRdC",
+        "text": "=Viotp có sim kìa dmm\nBalance: {{$node[\"HTTP Request\"].json[\"data\"][\"balance\"]}}",
+        "options": {}
+      },
+      "name": "Discord",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        300
+      ],
+      "id": "92230696-c57b-454d-8929-da879ab38d35"
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 10,
+              "unit": "minutes"
+            }
+          ]
+        }
+      },
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        460,
+        580
+      ],
+      "id": "9d4c4e38-d3d3-463f-9d61-dc3dd76a6382"
+    },
+    {
+      "parameters": {
+        "url": "https://api.viotp.com/request/getv2?token=01ddfbe3f531492ba8d8cfbb3f19e98b&serviceId=19",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        780,
+        420
+      ],
+      "id": "cb0faff2-2ddd-4390-829b-0f99a0c946a4"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$node[\"HTTP Request1\"].json[\"status_code\"]}}",
+              "operation": "equal",
+              "value2": 200
+            }
+          ]
+        }
+      },
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        420
+      ],
+      "id": "c8e48b5c-7eef-48c5-a8ae-80ab0ebe214e"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cron": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "id": 23,
+  "tags": [
+    {
+      "id": "1",
+      "name": "Production",
+      "createdAt": "2022-07-26T13:55:17.879Z",
+      "updatedAt": "2022-07-26T13:55:17.879Z"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "name": "Execute Entire WF",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        180,
+        640
+      ],
+      "id": "b75e49e3-d5be-45df-b455-afd32b4a8a0e"
+    },
+    {
+      "parameters": {
+        "source": "url",
+        "workflowUrl": "http://14.225.0.200:5678/workflow/19"
+      },
+      "name": "Log Phanh",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        480,
+        300
+      ],
+      "id": "ac00289d-ca48-43dc-8245-2a7529654652"
+    },
+    {
+      "parameters": {
+        "workflowId": "http://14.225.0.200:5678/workflow/20"
+      },
+      "name": "Log Trinh",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        480,
+        460
+      ],
+      "id": "b8a21f2d-a6f6-49a5-89fc-75ca92460590"
+    },
+    {
+      "parameters": {
+        "workflowId": "http://14.225.0.200:5678/workflow/2"
+      },
+      "name": "Log Toan",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        480,
+        640
+      ],
+      "id": "cfdf4736-2513-4d21-b308-7a06d2804688"
+    },
+    {
+      "parameters": {
+        "workflowId": "http://14.225.0.200:5678/workflow/22"
+      },
+      "name": "Log Dat",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        480,
+        820
+      ],
+      "id": "b94a45eb-af31-4693-82b0-c806efba77d7"
+    },
+    {
+      "parameters": {
+        "workflowId": "http://14.225.0.200:5678/workflow/1"
+      },
+      "name": "Log Tad",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        480,
+        1000
+      ],
+      "id": "b182a463-2893-48bd-a2c6-90cb487c8a66"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Log Phanh",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Trinh",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Toan",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Dat",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Tad",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": 24,
+  "tags": [
+    {
+      "id": "1",
+      "name": "Production",
+      "createdAt": "2022-07-26T13:55:17.879Z",
+      "updatedAt": "2022-07-26T13:55:17.879Z"
+    }
+  ]
+}
