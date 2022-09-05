@@ -1,0 +1,4 @@
+docker pull n8nio/n8n
+docker ps -a
+docker stop [container_id]
+docker rm [container_id]
