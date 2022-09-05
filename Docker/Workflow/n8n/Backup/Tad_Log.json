@@ -1,0 +1,328 @@
+{
+  "name": "Tad Log",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        20,
+        200
+      ],
+      "id": "0fcd6530-0193-45da-9cb7-bf426b6b19b6"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1000785676788318258/gwfEH35p_ESC2uORgIpDyeFiSYs2R9VaBsZLjp-RoevV6sp_vAi8OeL6P1BhYz8EEvJe",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Log1",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        840,
+        200
+      ],
+      "id": "68751960-d9e7-474a-a215-8c144a8fd31a"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1000785676788318258/gwfEH35p_ESC2uORgIpDyeFiSYs2R9VaBsZLjp-RoevV6sp_vAi8OeL6P1BhYz8EEvJe",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Log2",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        840,
+        440
+      ],
+      "id": "14ffacac-8f2a-429d-b771-e636689405af"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1000785676788318258/gwfEH35p_ESC2uORgIpDyeFiSYs2R9VaBsZLjp-RoevV6sp_vAi8OeL6P1BhYz8EEvJe",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Log6",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        840,
+        640
+      ],
+      "id": "01967c24-b14b-46e4-8c12-12a48309cd35"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1000785676788318258/gwfEH35p_ESC2uORgIpDyeFiSYs2R9VaBsZLjp-RoevV6sp_vAi8OeL6P1BhYz8EEvJe",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Log8",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        840,
+        860
+      ],
+      "id": "7e876957-19a0-4c17-9a1a-d0a306641d73"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=166346c6ec2fcfe9",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        600,
+        200
+      ],
+      "id": "70736617-181e-447d-a9a2-8999c4039d5c"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=df86c39b6f00b260",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 6",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        600,
+        640
+      ],
+      "id": "18bfead1-6134-49dc-9c6b-9c9cb0811294"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=f812286715fb2a4e",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 8",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        600,
+        860
+      ],
+      "id": "d4f5f7c6-e082-403d-9dcb-95844a0f95d2"
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 5,
+              "unit": "minutes"
+            }
+          ]
+        }
+      },
+      "name": "Every 15 Mins",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        360,
+        200
+      ],
+      "id": "3047b4e0-44c5-4be9-b620-4367e2a97423"
+    },
+    {
+      "parameters": {
+        "content": "**Chỉ được Execute Workflow, nghiêm cấm chỉnh sửa dưới mọi hình thức**\n\n\n**Writter: Datdt**",
+        "width": 380
+      },
+      "name": "Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        20,
+        440
+      ],
+      "id": "e34b6ffe-c6b2-4852-a4e5-e66622f23f06"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=42a493db5ae0258b",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 5",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        600,
+        440
+      ],
+      "id": "56235752-dbf7-4a7b-aa86-81f95dbf2b13"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=57e925cf08e5827b",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 9",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        860
+      ],
+      "id": "150759bf-669b-4de9-82bc-cb6c54ca8e28"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1000785676788318258/gwfEH35p_ESC2uORgIpDyeFiSYs2R9VaBsZLjp-RoevV6sp_vAi8OeL6P1BhYz8EEvJe",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}\n----------------------------------------",
+        "options": {}
+      },
+      "name": "Log 9",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        860
+      ],
+      "id": "b515b821-6795-4ff3-ae5a-95dde93c3d2b"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Log1": {
+      "main": [
+        [
+          {
+            "node": "Get Data 5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log2": {
+      "main": [
+        [
+          {
+            "node": "Get Data 6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log6": {
+      "main": [
+        [
+          {
+            "node": "Get Data 8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 1": {
+      "main": [
+        [
+          {
+            "node": "Log1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 6": {
+      "main": [
+        [
+          {
+            "node": "Log6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 8": {
+      "main": [
+        [
+          {
+            "node": "Log8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every 15 Mins": {
+      "main": [
+        [
+          {
+            "node": "Get Data 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 5": {
+      "main": [
+        [
+          {
+            "node": "Log2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log8": {
+      "main": [
+        [
+          {
+            "node": "Get Data 9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 9": {
+      "main": [
+        [
+          {
+            "node": "Log 9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "timezone": "Asia/Saigon",
+    "errorWorkflow": "14"
+  },
+  "id": 1,
+  "tags": [
+    {
+      "id": "1",
+      "name": "Production",
+      "createdAt": "2022-07-26T13:55:17.879Z",
+      "updatedAt": "2022-07-26T13:55:17.879Z"
+    }
+  ]
+}

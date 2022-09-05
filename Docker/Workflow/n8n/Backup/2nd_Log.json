@@ -1,0 +1,114 @@
+{
+  "name": "2nd Log",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        480,
+        200
+      ],
+      "id": "15ac0071-e29e-4547-8ad0-1851524913c0"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1004929272718303292/ibdCYu6oLNqeIM4uROMcg2m4MceMVZCk8u8zR7Im_6SkQ_3-Sz10d9FaDQZT1unxBGHq",
+        "text": "=Balance: {{$node[\"Get Data 1\"].json[\"balance\"]}}$",
+        "options": {}
+      },
+      "name": "Log1",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        320
+      ],
+      "id": "a1bb70ef-1df5-4ea0-b389-58a80e9789ca"
+    },
+    {
+      "parameters": {
+        "url": "https://2ndline.io/apiv1/getbalance?apikey=51896e3914b21cae41d32462c0758a08",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        900,
+        320
+      ],
+      "id": "7dae3e98-e421-4929-8435-01e719adc626"
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 10,
+              "unit": "minutes"
+            }
+          ]
+        }
+      },
+      "name": "Every 10 Mins",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        480,
+        460
+      ],
+      "id": "6584b414-5959-4857-93cd-c511b9908b85"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Get Data 1": {
+      "main": [
+        [
+          {
+            "node": "Log1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every 10 Mins": {
+      "main": [
+        [
+          {
+            "node": "Get Data 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Get Data 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": 18,
+  "tags": [
+    {
+      "id": "1",
+      "name": "Production",
+      "createdAt": "2022-07-26T13:55:17.879Z",
+      "updatedAt": "2022-07-26T13:55:17.879Z"
+    }
+  ]
+}

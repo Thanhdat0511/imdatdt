@@ -1,0 +1,659 @@
+{
+  "name": "Proxy Tad",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        580,
+        140
+      ],
+      "id": "aca630f7-f51f-4f11-83a7-70d9b757782f"
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 1
+            }
+          ]
+        }
+      },
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        580,
+        480
+      ],
+      "id": "1222b764-9dff-4273-8d6d-e13048d383f0"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "dateTime": [
+            {
+              "value1": "={{$node[\"Format1\"].json[\"Expired 1\"]}}",
+              "operation": "before",
+              "value2": "2022-08-01T12:14:07.000Z"
+            }
+          ]
+        }
+      },
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        300
+      ],
+      "id": "3aff25b6-0b70-4b2e-9396-e0a98868d202"
+    },
+    {
+      "parameters": {
+        "url": "http://proxy.tinsoftsv.com/api/getUserKeys.php?key=[US5zG3yZKsrdxio9DE44l42FhCx1XYZmM7rTOv]",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get all",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        840,
+        300
+      ],
+      "id": "83215dfe-b3df-4099-b4aa-d670a3c84e5f"
+    },
+    {
+      "parameters": {
+        "url": "http://proxy.tinsoftsv.com/api/getUserInfo.php?key=[US5zG3yZKsrdxio9DE44l42FhCx1XYZmM7rTOv]",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get info",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        1060,
+        300
+      ],
+      "id": "e3ac5f8c-a132-48bd-8aba-46832c8f7e8b"
+    },
+    {
+      "parameters": {
+        "url": "http://proxy.tinsoftsv.com/api/getKeyInfo.php?key=[TL3BmfL3Mnw9eKdsAjXPLDw6oKrUATPjH1ddT5]",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get key 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        1260,
+        300
+      ],
+      "id": "81a6f139-f689-46d6-8af0-68b7db517552"
+    },
+    {
+      "parameters": {
+        "url": "http://proxy.tinsoftsv.com/api/getKeyInfo.php?key=[TLe4ledpI2EVx6yTcoBcystbkp1ZzM6DPy9k43]",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get key 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        1840,
+        440
+      ],
+      "id": "9393dd54-2c23-4f27-9c91-cf54ce62b088"
+    },
+    {
+      "parameters": {
+        "url": "http://proxy.tinsoftsv.com/api/getKeyInfo.php?key=[TLWdsh38K3jgw6hMXq1i4DI3KN3JqIZ4Pi7h1x]",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get key 6",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        2560,
+        600
+      ],
+      "id": "44912908-5cce-46e4-9881-14c5ae47380a"
+    },
+    {
+      "parameters": {
+        "url": "http://proxy.tinsoftsv.com/api/getKeyInfo.php?key=[TLPZs3aChjS0HVWPAxvewkREBbmVaQo130pTUa]",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get key 8",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        3320,
+        780
+      ],
+      "id": "1136083d-0f64-42b7-b759-58c41d074651"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1002242349260357702/rH1yWaXWpR1qRyPUpSsjzzHSrKnl5E-UzU2ALIx9MS148fJVEAOHq41rvQM5jvIJpczW",
+        "text": "=Tool2: Kìa dmm, nay quên gia hạn proxy cho t à\nHết hạn từ lúc  rồi",
+        "options": {}
+      },
+      "name": "Discord2",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        2400,
+        300
+      ],
+      "id": "f6fb8f54-954f-4f83-8e09-a3c56900e1e4"
+    },
+    {
+      "parameters": {
+        "value": "={{$node[\"Get key 1\"].json[\"date_expired\"]}}",
+        "dataPropertyName": "Expired 1",
+        "custom": true,
+        "toFormat": "YYYY-MM-DD HH:mm:ss",
+        "options": {
+          "fromFormat": "DD-MM-YYYY HH:mm:ss"
+        }
+      },
+      "name": "Format1",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        140
+      ],
+      "id": "6705fd8c-28f0-4c6f-867f-2f0626a078ad"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1002242349260357702/rH1yWaXWpR1qRyPUpSsjzzHSrKnl5E-UzU2ALIx9MS148fJVEAOHq41rvQM5jvIJpczW",
+        "text": "=Tool6: Kìa dmm, nay quên gia hạn proxy cho t à\nHết hạn từ lúc {{$node[\"Format6\"].json[\"Expired 6\"]}} rồi",
+        "options": {}
+      },
+      "name": "Discord6",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        3160,
+        440
+      ],
+      "id": "586c0864-458a-468f-82b2-c22e01d43317"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1002242349260357702/rH1yWaXWpR1qRyPUpSsjzzHSrKnl5E-UzU2ALIx9MS148fJVEAOHq41rvQM5jvIJpczW",
+        "text": "=Tool1: Kìa dmm, nay quên gia hạn proxy cho t à\nHết hạn từ lúc {{$node[\"Format1\"].json[\"Expired 1\"]}} rồi",
+        "options": {}
+      },
+      "name": "Discord1",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        140
+      ],
+      "id": "66e22d33-d3b9-41cc-8af5-98a37896e8a9"
+    },
+    {
+      "parameters": {
+        "value": "={{$node[\"Get key 2\"].json[\"date_expired\"]}}",
+        "dataPropertyName": "Expired 2",
+        "custom": true,
+        "toFormat": "YYYY-MM-DD HH:mm:ss",
+        "options": {
+          "fromFormat": "DD-MM-YYYY HH:mm:ss"
+        }
+      },
+      "name": "Format2",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        2040,
+        440
+      ],
+      "id": "4fa2d1d9-3c82-4fa8-bdc1-8d3966ad909a"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "dateTime": [
+            {
+              "value1": "={{$node[\"Format2\"].json[\"Expired 2\"]}}",
+              "operation": "before",
+              "value2": "2022-08-01T12:14:17.000Z"
+            }
+          ]
+        }
+      },
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2240,
+        440
+      ],
+      "id": "62085e14-4214-4367-a799-da375831d11f"
+    },
+    {
+      "parameters": {
+        "value": "={{$node[\"Get key 6\"].json[\"date_expired\"]}}",
+        "dataPropertyName": "Expired 6",
+        "custom": true,
+        "toFormat": "YYYY-MM-DD HH:mm:ss",
+        "options": {
+          "fromFormat": "DD-MM-YYYY HH:mm:ss"
+        }
+      },
+      "name": "Format6",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        2780,
+        600
+      ],
+      "id": "92bf02f9-eb84-40a4-85a8-18bf12f197c0"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "dateTime": [
+            {
+              "value1": "={{$node[\"Format2\"].json[\"Expired 2\"]}}",
+              "operation": "before",
+              "value2": "2022-08-01T12:14:26.000Z"
+            }
+          ]
+        }
+      },
+      "name": "IF2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3020,
+        600
+      ],
+      "id": "75439f81-ffc3-4cc1-847f-8226e987d79f"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1002242349260357702/rH1yWaXWpR1qRyPUpSsjzzHSrKnl5E-UzU2ALIx9MS148fJVEAOHq41rvQM5jvIJpczW",
+        "text": "=Tool8: Kìa dmm, nay quên gia hạn proxy cho t à\nHết hạn từ lúc {{$node[\"Format8\"].json[\"Expired 8\"]}} rồi",
+        "options": {}
+      },
+      "name": "Discord8",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        3940,
+        600
+      ],
+      "id": "d3b63095-9046-4634-9759-f22e1ff234b2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "dateTime": [
+            {
+              "value1": "={{$node[\"Format8\"].json[\"Expired 8\"]}}",
+              "operation": "before",
+              "value2": "2022-08-01T12:14:31.000Z"
+            }
+          ]
+        }
+      },
+      "name": "IF3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3760,
+        780
+      ],
+      "id": "65ada756-fee0-4c65-907e-bfb095f6f45b"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{false}}"
+            }
+          ]
+        }
+      },
+      "name": "IF4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        4080,
+        940
+      ],
+      "id": "86b2e9f3-fa65-42f8-9d8a-7c1be7a8d46f"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1002242349260357702/rH1yWaXWpR1qRyPUpSsjzzHSrKnl5E-UzU2ALIx9MS148fJVEAOHq41rvQM5jvIJpczW",
+        "text": "=---------------------------------------------------------",
+        "options": {}
+      },
+      "name": "Discord",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        4300,
+        920
+      ],
+      "id": "1008de18-7171-41ad-ae2f-b13a64bdf48e"
+    },
+    {
+      "parameters": {
+        "value": "={{$node[\"Get key 8\"].json[\"date_expired\"]}}",
+        "dataPropertyName": "Expired 8",
+        "custom": true,
+        "toFormat": "YYYY-MM-DD HH:mm:ss",
+        "options": {
+          "fromFormat": "DD-MM-YYYY HH:mm:ss"
+        }
+      },
+      "name": "Format8",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        3540,
+        780
+      ],
+      "id": "de53d483-4043-4c09-936c-103986b7b6ff"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Cron": {
+      "main": [
+        [
+          {
+            "node": "Get all",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Get all",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Discord1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get key 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all": {
+      "main": [
+        [
+          {
+            "node": "Get info",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get info": {
+      "main": [
+        [
+          {
+            "node": "Get key 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get key 1": {
+      "main": [
+        [
+          {
+            "node": "Format1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get key 2": {
+      "main": [
+        [
+          {
+            "node": "Format2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format1": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord1": {
+      "main": [
+        [
+          {
+            "node": "Get key 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format2": {
+      "main": [
+        [
+          {
+            "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        [
+          {
+            "node": "Discord2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get key 6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord2": {
+      "main": [
+        [
+          {
+            "node": "Get key 6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get key 6": {
+      "main": [
+        [
+          {
+            "node": "Format6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format6": {
+      "main": [
+        [
+          {
+            "node": "IF2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF2": {
+      "main": [
+        [
+          {
+            "node": "Discord6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get key 8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord6": {
+      "main": [
+        [
+          {
+            "node": "Get key 8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get key 8": {
+      "main": [
+        [
+          {
+            "node": "Format8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF3": {
+      "main": [
+        [
+          {
+            "node": "Discord8",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "IF4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord8": {
+      "main": [
+        [
+          {
+            "node": "IF4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF4": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format8": {
+      "main": [
+        [
+          {
+            "node": "IF3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": 11,
+  "tags": [
+    {
+      "id": "1",
+      "name": "Production",
+      "createdAt": "2022-07-26T13:55:17.879Z",
+      "updatedAt": "2022-07-26T13:55:17.879Z"
+    },
+    {
+      "id": "2",
+      "name": "Alert",
+      "createdAt": "2022-07-30T16:10:18.823Z",
+      "updatedAt": "2022-07-30T16:10:18.823Z"
+    }
+  ]
+}

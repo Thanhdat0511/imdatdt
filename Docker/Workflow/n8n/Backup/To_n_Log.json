@@ -1,0 +1,485 @@
+{
+  "name": "Toản Log",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        120
+      ],
+      "id": "234eeb57-b0ea-47a6-99e3-1ea06c70bd23"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Log1",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        240,
+        120
+      ],
+      "id": "0a5f68f1-adc0-4155-a1dd-2e7efa0c2ee0"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Log2",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        240,
+        340
+      ],
+      "id": "7aab66f4-0f64-4814-be6d-8eef8fd57b59"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=7219534ada6a4fa3",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        0,
+        120
+      ],
+      "id": "0791bf27-bfa9-408a-8648-9417f128aff4"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=732fd92558fbe874",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        0,
+        340
+      ],
+      "id": "383daee4-78c6-4b78-98e4-21e03aed3780"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=ef7672a58c9d1183",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        0,
+        540
+      ],
+      "id": "94f3fc29-a691-4ee8-b35e-8255d2fa2f2f"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Log3",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        240,
+        540
+      ],
+      "id": "e8afd1a8-cd8c-4119-86c9-97c7f9459af1"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=79160e664af53344",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        0,
+        760
+      ],
+      "id": "889a2f85-485a-413d-a02e-df96c57f0783"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Log4",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        240,
+        760
+      ],
+      "id": "ecfd905d-481e-4cd5-8cfa-ea532278fb2d"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=af310860e6effe89",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 8",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        540,
+        1000
+      ],
+      "id": "e600f174-33ef-4521-9e3c-9f17dcaae30f"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=7ca53726afe390e3",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 7",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        540,
+        780
+      ],
+      "id": "c13a706f-a308-45fc-b880-af6521fa0ce3"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=98d62faabd2e0835",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 6",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        540,
+        580
+      ],
+      "id": "47d3dbc9-b9b6-42ba-866c-489499774476"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=fd2bbf9d6e3dc02b",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data 5",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        540,
+        340
+      ],
+      "id": "33187af7-2907-4164-ae3b-48013492f92d"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}\n-------------------------------------------",
+        "options": {}
+      },
+      "name": "Log8",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        780,
+        1000
+      ],
+      "id": "450e3b1f-5a42-4ce6-955a-dd3f1e8332f5"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Log7",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        780,
+        780
+      ],
+      "id": "a4927a9b-bf20-4368-bd1f-0feccdb2570b"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Log6",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        780,
+        580
+      ],
+      "id": "e98d72ff-252e-409a-aaee-61a102c96515"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
+        "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Log5",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        780,
+        340
+      ],
+      "id": "3313abbb-407a-431c-84e4-4eaa798d0413"
+    },
+    {
+      "parameters": {
+        "content": "**Chỉ được Execute Workflow, nghiêm cấm chỉnh sửa dưới mọi hình thức**\n\n\n**Writter: Datdt**",
+        "width": 380
+      },
+      "name": "Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -540,
+        420
+      ],
+      "id": "9fbb5980-71da-495d-9821-32c3a78e1ca4"
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 5,
+              "unit": "minutes"
+            }
+          ]
+        }
+      },
+      "name": "Every 10 Mins",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        120
+      ],
+      "id": "a8bad3d7-d26b-41a6-bc40-78357b0bc9ad"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Log1": {
+      "main": [
+        [
+          {
+            "node": "Get Data 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log2": {
+      "main": [
+        [
+          {
+            "node": "Get Data 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 1": {
+      "main": [
+        [
+          {
+            "node": "Log1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 2": {
+      "main": [
+        [
+          {
+            "node": "Log2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 3": {
+      "main": [
+        [
+          {
+            "node": "Log3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log3": {
+      "main": [
+        [
+          {
+            "node": "Get Data 4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 4": {
+      "main": [
+        [
+          {
+            "node": "Log4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log4": {
+      "main": [
+        [
+          {
+            "node": "Get Data 5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 8": {
+      "main": [
+        [
+          {
+            "node": "Log8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 7": {
+      "main": [
+        [
+          {
+            "node": "Log7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 6": {
+      "main": [
+        [
+          {
+            "node": "Log6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data 5": {
+      "main": [
+        [
+          {
+            "node": "Log5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log7": {
+      "main": [
+        [
+          {
+            "node": "Get Data 8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log6": {
+      "main": [
+        [
+          {
+            "node": "Get Data 7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log5": {
+      "main": [
+        [
+          {
+            "node": "Get Data 6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every 10 Mins": {
+      "main": [
+        [
+          {
+            "node": "Get Data 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "timezone": "Asia/Saigon",
+    "saveExecutionProgress": "DEFAULT",
+    "errorWorkflow": "14"
+  },
+  "id": 2,
+  "tags": [
+    {
+      "id": "1",
+      "name": "Production",
+      "createdAt": "2022-07-26T13:55:17.879Z",
+      "updatedAt": "2022-07-26T13:55:17.879Z"
+    }
+  ]
+}

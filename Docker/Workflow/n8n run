@@ -1,0 +1,13 @@
+docker run -it -d \
+    --name n8n \
+    -p 5678:5678 \
+    -e N8N_SMTP_SENDER=n8n@admin.com \
+    -e N8N_SMTP_SSL=true \
+    -e GENERIC_TIMEZONE=Asia/Ho_Chi_Minh \
+    -v ~/.n8n:/home/node/.n8n \
+    n8nio/n8n
+
+GG sheet SA
+n8n-synthetic@level-choir-358014.iam.gserviceaccount.com
+-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQDOsOhHoeHH2O7n\n+7U0+3F/gZeyf+7WXpskfvXjz2zoFe7JB/olQP+VRoILPrr8Oo9OSZozh7IeWQkr\nJAh+szt5QCpiAAnBS/bwNzNKzCC5nhfnpKsxGqjUxCP0QXfhn1/qHuDOJ319H/Da\nevqR/n46WV15q/rcucR+ZyBcF37pjTApZ/vfZFrxHOyC7ME9ibhxlBxS8oLT1yeW\n0JVmiuz1Yw4+71RS6znODOBTZdggpkRKrsEHi0hFIfw2dj+G+GCNvmbSbPZ82FP3\nxE0+LFmJyPNEBvCh+vZtjtT/RkmImwGHDR/g6zy3POXdXWI1lxAw1pUSkbQNIw2X\neSEgAIOFAgMBAAECgf8JPYS8E+Bj54hRzqNeZ1pL3wtlFM4OlPvLfJLyfRH1gqTA\nZiL2Go4D8xXnVJ8Nc0QpQuKe6BxyNtFbcAmGWf3y9dAxxdCt3KZo/qPuqQc6W1D0\nwp1FaWGf2ORz+/A4yET5ZekBqyEIQZawTgulMqxTwRvmqEWZ5zEpNwQwQBccyKSF\nblwLAGPwxliKR71kCbj8yj01yepQcU2tNyrpmManYkeTFdNi1xRz08xqIsZ4M5FO\nm+Z4WoKBmXNqtBFt54d+KyM+gHxGcJiBNTx30EeofZzsQtKLvwqq2L+ZbzPT+Lo3\nnLKoJLJ+boVj2HUykAkIUbjDs1/6HglbwjFFVGECgYEA962SYbYfZa+EJiXPmKkk\nKcvI6Qox/6muQvkEEjuUWrXUmb306QNhlD2v9mHbSeYjuNYAOroNyCw74blRtR1x\nuJG9Mjj/3++eKch7/TkIDSsUuRPxTRchft91aIt3YksQGMa9xHrI6j6NRm2kCUW7\ntWRvuQHApdxzzfJHOm4GK7ECgYEA1aLIJ2Dc3E9AHinFQvXValMsMqpR6vpZmi2f\nj7dSbrNkywfVBXIifivYIyUeN8Vg3cfqFb/XxilNN3Nws3m6e7Jzf467FYzfh6Cb\nsQEfMVmINPzrhEisny2dHLq/sskazDjZDKTGp42qnxvKIwxIzlKxwDcZJOYBG6Qk\nQfnfThUCgYEA6B1/4RjYZejOlR28Z1qkrJLyEAxg/TQdP2C2AwxZJYXg39CZNMLZ\ncR86yFG/PIt1EOVlw6PYBLAH0qxlubIFgK78u5OVoV2kQY5FPPR06jpkqmrZKqEx\n4AA1vStvT+v/AulGsVtM7dJ/ffCE2bfDieS9m4nb7NUkpm6XeFfiapECgYAXuYIc\nzWb5mFt4fg8IBqDys9XesodyXucAdjyYCzW+UXHKEk6X0jr+ZAQWsxKOAv9k4cSf\nMbTWrtOCavGDHOuWvRSSf9lK5WAVgcKIf6VlJ5o2uDe3cxKogrpF7H9JbYfqUg3Y\nl5vwE411KfLivYSAVTKkM/o43MoWtb3JDeS8mQKBgAdtJwIBQN5SyJaqOhgDWFyl\n+6Fh3dhRoDb5acxpfhwyTV82x6piy4XtbZcrynVEycuIJP4fMgjJUT/oe8GrS8TT\n5CIJ3GPMvkBw/pgSRJv6NQp32tkxBfk3qKmnkEctoCwnEz3tqPZx4DwZz0YqOwq9\n/23YSthYTAwceFFYuB5j\n-----END PRIVATE KEY-----\n
+

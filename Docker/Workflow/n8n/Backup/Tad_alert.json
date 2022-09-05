@@ -1,0 +1,723 @@
+{
+  "name": "Tad alert",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        80
+      ],
+      "id": "7e284e11-ffca-42b1-b5d5-15feebc9ef41"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=aefe0e993e477b10",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data Tool 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        20,
+        260
+      ],
+      "notesInFlow": true,
+      "id": "0aa69bd9-8c58-4e0c-af36-fc9af7eee8f7",
+      "notes": "b1dcad3d6d43f9cc"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1000759732207882260/1E-npYTV_CZ2ICcMgDNyaTdrv5eO4K5zUAAmtEZ0AVvzusMsamoGxAqTjqdehcm9V1gu",
+        "text": "={{$node[\"Get Data Tool 1\"].json[\"Result\"][\"Name\"]}}: Nạp tiền cho t đi dmm dưới 20k rồi",
+        "options": {}
+      },
+      "name": "Discord1",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        580,
+        240
+      ],
+      "id": "02a8b0df-0a63-4984-bad8-a44c14925389"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1000759732207882260/1E-npYTV_CZ2ICcMgDNyaTdrv5eO4K5zUAAmtEZ0AVvzusMsamoGxAqTjqdehcm9V1gu",
+        "text": "={{$node[\"Get Data Tool 2\"].json[\"Result\"][\"Name\"]}}: Nạp tiền cho t đi dmm dưới 20k rồi",
+        "options": {}
+      },
+      "name": "Discord2",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        580,
+        640
+      ],
+      "id": "37fff2d2-5a05-4fbb-93c9-9e550581d01f"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1000759732207882260/1E-npYTV_CZ2ICcMgDNyaTdrv5eO4K5zUAAmtEZ0AVvzusMsamoGxAqTjqdehcm9V1gu",
+        "text": "=CTSC {{$node[\"Get Data Tool 1\"].json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Discord1.1",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        800,
+        240
+      ],
+      "id": "0b5ef95b-e408-4208-aac7-41b369dde8e7"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1000759732207882260/1E-npYTV_CZ2ICcMgDNyaTdrv5eO4K5zUAAmtEZ0AVvzusMsamoGxAqTjqdehcm9V1gu",
+        "text": "=CTSC {{$node[\"Get Data Tool 2\"].json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Discord2.1",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        800,
+        640
+      ],
+      "id": "2d2effb3-e093-4fbf-b7e6-d4c84af32e3e"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=0e74f2513fa2f720",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data Tool 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        20,
+        660
+      ],
+      "notesInFlow": true,
+      "id": "9be5a47e-b657-49df-a085-7c52df03eea8"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=ca15d92345881901",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data Tool 6",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        20,
+        1060
+      ],
+      "notesInFlow": true,
+      "id": "53bfc34f-3ec4-44e5-a42f-e622b9b639a6"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=5c9cf41354625176",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "Get Data Tool 8",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        20,
+        1460
+      ],
+      "notesInFlow": true,
+      "id": "6028d5b7-2406-4fbf-a68e-dbc38167e7a7"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$node[\"Get Data Tool 1\"].json[\"Result\"][\"Balance\"]}}",
+              "value2": 20
+            }
+          ]
+        }
+      },
+      "name": "IF2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        340,
+        260
+      ],
+      "id": "4fa5303c-8e90-4bc4-b96f-705a7d61b1a6"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$node[\"Get Data Tool 2\"].json[\"Result\"][\"Balance\"]}}",
+              "value2": 20
+            }
+          ]
+        }
+      },
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        340,
+        660
+      ],
+      "id": "a26dde65-152a-464a-86d6-84e447848a4a"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$node[\"Get Data Tool 6\"].json[\"Result\"][\"Balance\"]}}",
+              "value2": 20
+            }
+          ]
+        }
+      },
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        340,
+        1060
+      ],
+      "id": "af7a9f9b-0c60-40a2-97bb-be630ad4800c"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1000759732207882260/1E-npYTV_CZ2ICcMgDNyaTdrv5eO4K5zUAAmtEZ0AVvzusMsamoGxAqTjqdehcm9V1gu",
+        "text": "={{$node[\"Get Data Tool 6\"].json[\"Result\"][\"Name\"]}}: Nạp tiền cho t đi dmm dưới 20k rồi",
+        "options": {}
+      },
+      "name": "Discord6",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        580,
+        1040
+      ],
+      "id": "1e9dff8a-3d87-4914-ae6e-3e36a94a9362"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1000759732207882260/1E-npYTV_CZ2ICcMgDNyaTdrv5eO4K5zUAAmtEZ0AVvzusMsamoGxAqTjqdehcm9V1gu",
+        "text": "=CTSC {{$node[\"Get Data Tool 6\"].json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Discord6.1",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1040
+      ],
+      "id": "f70d1c34-3929-4e64-908a-4c1275e34153"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$node[\"Get Data Tool 8\"].json[\"Result\"][\"Balance\"]}}",
+              "value2": 20
+            }
+          ]
+        }
+      },
+      "name": "IF3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        340,
+        1460
+      ],
+      "id": "c12aab4d-594f-45ed-971c-d0997dfffb78"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1000759732207882260/1E-npYTV_CZ2ICcMgDNyaTdrv5eO4K5zUAAmtEZ0AVvzusMsamoGxAqTjqdehcm9V1gu",
+        "text": "={{$node[\"Get Data Tool 8\"].json[\"Result\"][\"Name\"]}}: Nạp tiền cho t đi dmm dưới 20k rồi",
+        "options": {}
+      },
+      "name": "Discord8",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        580,
+        1440
+      ],
+      "id": "706b9ff7-739e-4c55-9300-a24a55265b8d"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discordapp.com/api/webhooks/1000759732207882260/1E-npYTV_CZ2ICcMgDNyaTdrv5eO4K5zUAAmtEZ0AVvzusMsamoGxAqTjqdehcm9V1gu",
+        "text": "=CTSC {{$node[\"Get Data Tool 8\"].json[\"Result\"][\"Phone\"]}}",
+        "options": {}
+      },
+      "name": "Discord8.1",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1440
+      ],
+      "id": "bf4d065f-5f79-471d-b4be-b32a8486c41d"
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1000759732207882260/1E-npYTV_CZ2ICcMgDNyaTdrv5eO4K5zUAAmtEZ0AVvzusMsamoGxAqTjqdehcm9V1gu",
+        "text": "=----------------------------------------------------",
+        "options": {}
+      },
+      "name": "Discord8.2",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        1640
+      ],
+      "id": "ad0bc20f-f362-4723-82fa-01ba8589b8a5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$node[\"Get Data Tool 1\"].json[\"Result\"][\"Balance\"]}}",
+              "value2": 20
+            },
+            {
+              "value1": "={{$node[\"Get Data Tool 2\"].json[\"Result\"][\"Balance\"]}}",
+              "value2": 20
+            },
+            {
+              "value1": "={{$node[\"Get Data Tool 6\"].json[\"Result\"][\"Balance\"]}}",
+              "value2": 20
+            },
+            {
+              "value1": "={{$node[\"Get Data Tool 8\"].json[\"Result\"][\"Balance\"]}}",
+              "value2": 20
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "name": "IF4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        1760
+      ],
+      "id": "9f718f1a-1ea6-4aab-b89c-0a2515b2674f"
+    },
+    {
+      "parameters": {
+        "content": "**Chỉ được Execute Workflow, nghiêm cấm chỉnh sửa dưới mọi hình thức**\n\n\n**Writter: Datdt**",
+        "width": 380
+      },
+      "name": "Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        240
+      ],
+      "id": "e90d8f63-296a-42d0-b184-cded20f91cb4"
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "seconds"
+      },
+      "name": "Wait1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        800,
+        440
+      ],
+      "webhookId": "101fd844-5b36-449c-8a78-6ba81ce1de15",
+      "id": "e040ce6c-ae34-457a-ab46-9bdcd7882432"
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "seconds"
+      },
+      "name": "Wait2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        800,
+        840
+      ],
+      "webhookId": "101fd844-5b36-449c-8a78-6ba81ce1de15",
+      "id": "19e3c8f2-121a-41ab-9189-1f37a6553a56"
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "seconds"
+      },
+      "name": "Wait6",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1240
+      ],
+      "webhookId": "101fd844-5b36-449c-8a78-6ba81ce1de15",
+      "id": "73cdd42e-d344-431c-9753-4b93cd1fd3dc"
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "seconds"
+      },
+      "name": "Wait8",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1640
+      ],
+      "webhookId": "8d4bdf61-fcb8-46bb-97d3-0be1d8fe8ae1",
+      "id": "e4c5664e-1bc9-49ad-8293-3741ab09b8b1"
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 3,
+              "unit": "minutes"
+            }
+          ]
+        }
+      },
+      "name": "Every 3 Mins",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        420
+      ],
+      "id": "999461f1-1ad1-4e32-bfe9-659bc6fcab5b"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Get Data Tool 1": {
+      "main": [
+        [
+          {
+            "node": "IF2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord1": {
+      "main": [
+        [
+          {
+            "node": "Discord1.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord1.1": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord2": {
+      "main": [
+        [
+          {
+            "node": "Discord2.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF2": {
+      "main": [
+        [
+          {
+            "node": "Discord1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data Tool 2": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Discord2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord2.1": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data Tool 6": {
+      "main": [
+        [
+          {
+            "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        [
+          {
+            "node": "Discord6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord6": {
+      "main": [
+        [
+          {
+            "node": "Discord6.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Data Tool 8": {
+      "main": [
+        [
+          {
+            "node": "IF3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord6.1": {
+      "main": [
+        [
+          {
+            "node": "Wait6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF3": {
+      "main": [
+        [
+          {
+            "node": "Discord8",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord8": {
+      "main": [
+        [
+          {
+            "node": "Discord8.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord8.1": {
+      "main": [
+        [
+          {
+            "node": "Wait8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF4": {
+      "main": [
+        [
+          {
+            "node": "Discord8.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Get Data Tool 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Get Data Tool 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "Get Data Tool 6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait6": {
+      "main": [
+        [
+          {
+            "node": "Get Data Tool 8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait8": {
+      "main": [
+        [
+          {
+            "node": "IF4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every 3 Mins": {
+      "main": [
+        [
+          {
+            "node": "Get Data Tool 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "timezone": "Asia/Saigon",
+    "errorWorkflow": "14",
+    "saveExecutionProgress": "DEFAULT"
+  },
+  "id": 3,
+  "tags": [
+    {
+      "id": "1",
+      "name": "Production",
+      "createdAt": "2022-07-26T13:55:17.879Z",
+      "updatedAt": "2022-07-26T13:55:17.879Z"
+    }
+  ]
+}
