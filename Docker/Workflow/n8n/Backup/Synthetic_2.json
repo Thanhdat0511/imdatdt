@@ -1,0 +1,786 @@
+{
+  "name": "Synthetic 2",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "3386ec68-7a97-4602-9a99-1eeb66bf298a",
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://chothuesimcode.com/api?act=account&apik={{$node[\"Set1\"].json[\"api1\"]}}",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "id": "dbd8282b-2443-4ca6-8f57-8b1083448d9d",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -660,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "GG Sheet ID",
+              "value": "1dazAyVGzdXEkHFLPKAaIJxmh-Kv3h8_Pd6XgoMFCTX0"
+            }
+          ],
+          "number": [
+            {
+              "name": "Wait",
+              "value": 1
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c9b6efc7-183f-46e8-bcc7-d62007a3bda0",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -1100,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "api1",
+              "value": "539188cf206c15d4"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "46a5a5dd-a31c-4689-9525-4021a4d849dc",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -880,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json[\"ResponseCode\"] }}",
+              "operation": "equal"
+            }
+          ]
+        }
+      },
+      "id": "3a395452-ca7c-4b46-89cc-4fb21ad14138",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "sheetId": "={{$node[\"Set1\"].json[\"GG Sheet ID\"]}}",
+        "range": "A:S",
+        "options": {}
+      },
+      "name": "Google Sheets6",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        1100
+      ],
+      "id": "5ea349c9-9d00-4307-8118-fed1e09c0bab",
+      "credentials": {
+        "googleApi": {
+          "id": "1",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "action": "calculate",
+        "value": "={{new Date()}}",
+        "duration": 7,
+        "timeUnit": "hours",
+        "dataPropertyName": "Date now",
+        "options": {}
+      },
+      "name": "Get Date Now2",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        800
+      ],
+      "id": "d4125502-8512-431d-b90c-ddf40620a5e2"
+    },
+    {
+      "parameters": {
+        "value": "={{$node[\"Get Date Now2\"].json[\"Date now\"]}}",
+        "dataPropertyName": "Format",
+        "custom": true,
+        "toFormat": "DD-MM-YYYY HH:mm:ss",
+        "options": {}
+      },
+      "name": "Format2",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        800
+      ],
+      "id": "3c4c067b-645a-4f5f-8cea-0fc6fc73f751"
+    },
+    {
+      "parameters": {},
+      "id": "81c82a8a-a2f4-4add-8a0c-0a0db5fd80d2",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        580,
+        800
+      ],
+      "webhookId": "4a4a8bb0-cd96-459d-a062-1f069cbd5b82"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$node[\"HTTP Request2\"].json[\"ResponseCode\"]}}",
+              "operation": "equal"
+            }
+          ]
+        }
+      },
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1340,
+        1560
+      ],
+      "notesInFlow": true,
+      "id": "e6b77685-418f-4cd9-9048-15bf1ffd5060",
+      "notes": "Check 401 or 0"
+    },
+    {
+      "parameters": {
+        "action": "calculate",
+        "value": "={{new Date()}}",
+        "duration": 7,
+        "timeUnit": "hours",
+        "dataPropertyName": "Date now",
+        "options": {}
+      },
+      "name": "Get Date Now",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        -720,
+        1680
+      ],
+      "id": "502d1c4f-714a-479f-acc9-4b112de807c0"
+    },
+    {
+      "parameters": {
+        "value": "={{$node[\"Get Date Now\"].json[\"Date now\"]}}",
+        "dataPropertyName": "Format",
+        "custom": true,
+        "toFormat": "DD-MM-YYYY HH:mm:ss",
+        "options": {}
+      },
+      "name": "Format",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        1680
+      ],
+      "id": "7a28e662-3c5b-4d73-9c87-1c34f47e6c97"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "update",
+        "sheetId": "1dazAyVGzdXEkHFLPKAaIJxmh-Kv3h8_Pd6XgoMFCTX0",
+        "range": "A:S",
+        "key": "Api",
+        "options": {}
+      },
+      "name": "Google Sheets5",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 2,
+      "position": [
+        -100,
+        1680
+      ],
+      "id": "11b58de8-ac0e-47e2-a18b-7fe240829ae5",
+      "credentials": {
+        "googleApi": {
+          "id": "1",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "Api",
+              "value": "ff8c04fd1e250a04"
+            },
+            {
+              "name": "Status",
+              "value": "Banned"
+            },
+            {
+              "name": "Balance2"
+            },
+            {
+              "name": "Balance3"
+            },
+            {
+              "name": "Balance4"
+            },
+            {
+              "name": "Balance5"
+            }
+          ],
+          "number": [
+            {
+              "name": "Time",
+              "value": "={{$node[\"Format\"].json[\"Format\"]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Set3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        1680
+      ],
+      "id": "2b6f780f-70ff-444f-bbb8-34232418fdca"
+    },
+    {
+      "parameters": {
+        "unit": "minutes"
+      },
+      "name": "Wait1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        1420
+      ],
+      "webhookId": "a7705e4b-1a50-4f58-a549-6964978862d1",
+      "id": "847152ab-0e73-4436-a01b-06349d921fc6"
+    },
+    {
+      "parameters": {
+        "url": "https://chothuesimcode.com/api?act=account&apik=539188cf206c15d4",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "name": "HTTP Request2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        -1480,
+        1560
+      ],
+      "id": "01e6b309-a1f6-467d-a1ac-730ea4c0d600"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "Api",
+              "value": "ff8c04fd1e250a04"
+            },
+            {
+              "name": "Name",
+              "value": "={{$node[\"HTTP Request2\"].json[\"Result\"][\"Name\"]}}"
+            }
+          ],
+          "number": [
+            {
+              "name": "Balance1",
+              "value": "={{$node[\"HTTP Request2\"].json[\"Result\"][\"Balance\"]}}"
+            },
+            {
+              "name": "Phone",
+              "value": "={{$node[\"HTTP Request2\"].json[\"Result\"][\"Phone\"]}}"
+            },
+            {
+              "name": "Run time",
+              "value": "={{$node[\"Format3\"].json[\"Format\"]}}"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "name": "Set4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -720,
+        1420
+      ],
+      "id": "762e7e77-c3ea-4b26-adac-b11caf4fdbac"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "update",
+        "sheetId": "1dazAyVGzdXEkHFLPKAaIJxmh-Kv3h8_Pd6XgoMFCTX0",
+        "range": "A:S",
+        "key": "Api",
+        "options": {}
+      },
+      "name": "Google Sheets2",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 2,
+      "position": [
+        -520,
+        1420
+      ],
+      "id": "db4d5ad8-e162-47ab-aa6d-43b6f1626ed5",
+      "credentials": {
+        "googleApi": {
+          "id": "1",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "sheetId": "1dazAyVGzdXEkHFLPKAaIJxmh-Kv3h8_Pd6XgoMFCTX0",
+        "range": "A:S",
+        "options": {}
+      },
+      "name": "Google Sheets7",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 2,
+      "position": [
+        -1080,
+        1700
+      ],
+      "id": "d5f23975-6679-4394-95f8-9899f1c9f035",
+      "credentials": {
+        "googleApi": {
+          "id": "1",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$node[\"Google Sheets7\"].json[\"Status\"]}}",
+              "operation": "contains",
+              "value2": "Active"
+            },
+            {
+              "value1": "={{$node[\"Google Sheets7\"].json[\"Status\"]}}",
+              "operation": "contains",
+              "value2": "Running"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "name": "IF2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        1700
+      ],
+      "id": "24ba4fdd-9ce0-49a3-86c9-facd3bd5f7b0"
+    },
+    {
+      "parameters": {
+        "action": "calculate",
+        "value": "={{new Date()}}",
+        "duration": 7,
+        "timeUnit": "hours",
+        "dataPropertyName": "Date now",
+        "options": {}
+      },
+      "name": "Get Date Now3",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        -1080,
+        1420
+      ],
+      "id": "a36950cc-faca-4a62-94f3-7c8259f303c5"
+    },
+    {
+      "parameters": {
+        "value": "={{$node[\"Get Date Now3\"].json[\"Date now\"]}}",
+        "dataPropertyName": "Format",
+        "custom": true,
+        "toFormat": "DD-MM-YYYY HH:mm:ss",
+        "options": {}
+      },
+      "name": "Format3",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        1420
+      ],
+      "id": "98c709b9-bea6-4382-98d1-d774cdf8df9a"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "Name",
+              "value": "={{$node[\"HTTP Request\"].json[\"Result\"][\"Name\"]}}"
+            },
+            {
+              "name": "Api",
+              "value": "={{$node[\"Set1\"].json[\"api1\"]}}"
+            }
+          ],
+          "number": [
+            {
+              "name": "Phone",
+              "value": "={{$node[\"HTTP Request\"].json[\"Result\"][\"Phone\"]}}"
+            },
+            {
+              "name": "Balance1",
+              "value": "={{$node[\"HTTP Request\"].json[\"Result\"][\"Balance\"]}}"
+            },
+            {
+              "name": "Run time",
+              "value": "={{$node[\"Format2\"].json[\"Format\"]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fa724cae-be15-4ecd-a846-69e4066d1a63",
+      "name": "Set2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        160,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "update",
+        "sheetId": "={{$node[\"Set\"].json[\"GG Sheet ID\"]}}",
+        "range": "A:S",
+        "key": "Api",
+        "options": {}
+      },
+      "id": "eb19aa0f-becc-4fc7-a52b-c4e955029ec5",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 2,
+      "position": [
+        340,
+        800
+      ],
+      "credentials": {
+        "googleApi": {
+          "id": "1",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "đến đây r "
+      },
+      "id": "182a0c41-794d-41eb-8e1a-23150779e617",
+      "name": "Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        460,
+        760
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Set1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Get Date Now2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Sheets6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Date Now2": {
+      "main": [
+        [
+          {
+            "node": "Format2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format2": {
+      "main": [
+        [
+          {
+            "node": "Set2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        [
+          {
+            "node": "Get Date Now3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Sheets7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Date Now": {
+      "main": [
+        [
+          {
+            "node": "Format",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format": {
+      "main": [
+        [
+          {
+            "node": "Set3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set3": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set4": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets2": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets7": {
+      "main": [
+        [
+          {
+            "node": "IF2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF2": {
+      "main": [
+        [
+          {
+            "node": "Get Date Now",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Date Now3": {
+      "main": [
+        [
+          {
+            "node": "Format3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format3": {
+      "main": [
+        [
+          {
+            "node": "Set4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set2": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": 9,
+  "meta": {
+    "instanceId": "a674d506978da3053e5a404a62f6bcea6ac6137540c0d2713115cca5162ccd13"
+  },
+  "tags": [
+    {
+      "id": "3",
+      "name": "Beta",
+      "createdAt": "2022-09-05T14:03:36.710Z",
+      "updatedAt": "2022-09-05T14:03:36.710Z"
+    }
+  ]
+}

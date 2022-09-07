@@ -1,9 +1,9 @@
 {
-  "name": "Phanh Log",
+  "name": "Toan Log",
   "nodes": [
     {
       "parameters": {},
-      "id": "ccae7ce9-7444-4d94-8373-c08b47002d7a",
+      "id": "83531973-ec5f-4a37-a297-711c60f2524b",
       "name": "Start",
       "type": "n8n-nodes-base.start",
       "typeVersion": 1,
@@ -14,7 +14,7 @@
     },
     {
       "parameters": {
-        "webhookUri": "https://discord.com/api/webhooks/1004969283945758730/hmizyLJtct7Umt4pIYl1g54ocZRaQzGYOvggnoAJQ7oa3xkdsj7lTO4PSx5BtPzWqqBT",
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
         "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
         "options": {}
       },
@@ -25,11 +25,11 @@
         1940,
         260
       ],
-      "id": "6ca73606-4b9d-4ae5-a455-2551c2ba3dbe"
+      "id": "ecf88d3c-a9ea-4c0f-bde1-b0de82fd302d"
     },
     {
       "parameters": {
-        "webhookUri": "https://discord.com/api/webhooks/1004969283945758730/hmizyLJtct7Umt4pIYl1g54ocZRaQzGYOvggnoAJQ7oa3xkdsj7lTO4PSx5BtPzWqqBT",
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
         "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
         "options": {}
       },
@@ -40,11 +40,11 @@
         1940,
         480
       ],
-      "id": "5ea824de-5c33-414e-899a-419d0bb2aad3"
+      "id": "a4c242cb-59a8-4012-a50f-7845b7adeb03"
     },
     {
       "parameters": {
-        "url": "https://chothuesimcode.com/api?act=account&apik=78b832ea388fb6b0",
+        "url": "https://chothuesimcode.com/api?act=account&apik=96b0327c7693d337",
         "allowUnauthorizedCerts": true,
         "options": {}
       },
@@ -55,11 +55,11 @@
         1700,
         260
       ],
-      "id": "10df59b0-3e20-4e8e-b90b-11b818325899"
+      "id": "03ce55a7-b968-46cb-bbea-9492b0e86c55"
     },
     {
       "parameters": {
-        "url": "https://chothuesimcode.com/api?act=account&apik=8b2b8d9950756a12",
+        "url": "https://chothuesimcode.com/api?act=account&apik=d9185ebe2ac9cfbd",
         "allowUnauthorizedCerts": true,
         "options": {}
       },
@@ -70,11 +70,11 @@
         1700,
         480
       ],
-      "id": "43b36ca7-5dfc-4ece-887b-dc145093c1be"
+      "id": "f26f2d00-400d-4e94-a715-a3a8bfe0b194"
     },
     {
       "parameters": {
-        "url": "https://chothuesimcode.com/api?act=account&apik=5e47314c0b32ab63",
+        "url": "https://chothuesimcode.com/api?act=account&apik=207f7a553222559f",
         "allowUnauthorizedCerts": true,
         "options": {}
       },
@@ -85,11 +85,11 @@
         1700,
         680
       ],
-      "id": "673d2110-0a6f-4c2c-b6d4-d7ca4169e316"
+      "id": "26ea5870-9201-45a9-b9e4-0f2c7f0b5905"
     },
     {
       "parameters": {
-        "webhookUri": "https://discord.com/api/webhooks/1004969283945758730/hmizyLJtct7Umt4pIYl1g54ocZRaQzGYOvggnoAJQ7oa3xkdsj7lTO4PSx5BtPzWqqBT",
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
         "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
         "options": {}
       },
@@ -100,11 +100,11 @@
         1940,
         680
       ],
-      "id": "ed5a1fd0-6b3e-428e-a29b-8d1689b38c9b"
+      "id": "e92c6964-7903-4a28-bf49-435d21b00489"
     },
     {
       "parameters": {
-        "url": "https://chothuesimcode.com/api?act=account&apik=24adee6d84f295ec",
+        "url": "https://chothuesimcode.com/api?act=account&apik=7f31c363a483cb18",
         "allowUnauthorizedCerts": true,
         "options": {}
       },
@@ -115,11 +115,11 @@
         1700,
         900
       ],
-      "id": "e9997814-6af3-4c95-a028-70a87c58befe"
+      "id": "e466a125-8cc4-44b5-9e78-2131938310e0"
     },
     {
       "parameters": {
-        "webhookUri": "https://discord.com/api/webhooks/1004969283945758730/hmizyLJtct7Umt4pIYl1g54ocZRaQzGYOvggnoAJQ7oa3xkdsj7lTO4PSx5BtPzWqqBT",
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
         "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
         "options": {}
       },
@@ -130,11 +130,11 @@
         1940,
         900
       ],
-      "id": "54b12b51-67e9-4663-9e18-b57e4aefa373"
+      "id": "65c05f6f-7c42-4a45-8596-18e3bac6d3ba"
     },
     {
       "parameters": {
-        "url": "https://chothuesimcode.com/api?act=account&apik=40f462cd7002e0cb",
+        "url": "https://chothuesimcode.com/api?act=account&apik=af310860e6effe89",
         "allowUnauthorizedCerts": true,
         "options": {}
       },
@@ -145,11 +145,11 @@
         2240,
         1140
       ],
-      "id": "524dd541-956a-4a9f-9eb0-cbfcf8c83278"
+      "id": "bf06e044-4efd-4e50-ac45-57bb77c6aecc"
     },
     {
       "parameters": {
-        "url": "https://chothuesimcode.com/api?act=account&apik=f638036bb63e7411",
+        "url": "https://chothuesimcode.com/api?act=account&apik=7ca53726afe390e3",
         "allowUnauthorizedCerts": true,
         "options": {}
       },
@@ -160,11 +160,11 @@
         2240,
         920
       ],
-      "id": "c553edf3-0d08-4c25-87cd-2b2719103f6e"
+      "id": "d5702cb4-02be-4f0a-bd26-f54502a62c85"
     },
     {
       "parameters": {
-        "url": "https://chothuesimcode.com/api?act=account&apik=c71823c36faddf24",
+        "url": "https://chothuesimcode.com/api?act=account&apik=98d62faabd2e0835",
         "allowUnauthorizedCerts": true,
         "options": {}
       },
@@ -175,11 +175,11 @@
         2240,
         720
       ],
-      "id": "772a7fe4-dbe3-46f9-8019-d25e9a69ef1b"
+      "id": "0b21c322-cca3-4359-a716-5533c4a144be"
     },
     {
       "parameters": {
-        "url": "https://chothuesimcode.com/api?act=account&apik=ecb068938c85b3fe",
+        "url": "https://chothuesimcode.com/api?act=account&apik=fd2bbf9d6e3dc02b",
         "allowUnauthorizedCerts": true,
         "options": {}
       },
@@ -190,11 +190,11 @@
         2240,
         480
       ],
-      "id": "eeebc3ce-cf62-4081-a275-796f2e60efba"
+      "id": "3a4e4d0a-fea2-452e-ac24-e5da0598a8a2"
     },
     {
       "parameters": {
-        "webhookUri": "https://discord.com/api/webhooks/1004969283945758730/hmizyLJtct7Umt4pIYl1g54ocZRaQzGYOvggnoAJQ7oa3xkdsj7lTO4PSx5BtPzWqqBT",
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
         "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}\n-------------------------------------------",
         "options": {}
       },
@@ -205,11 +205,11 @@
         2480,
         1140
       ],
-      "id": "59ea6a2e-cda5-4204-a945-d08ce3864be0"
+      "id": "58647e3e-6ff9-4b3e-9ed8-0efee4c1e8cf"
     },
     {
       "parameters": {
-        "webhookUri": "https://discord.com/api/webhooks/1004969283945758730/hmizyLJtct7Umt4pIYl1g54ocZRaQzGYOvggnoAJQ7oa3xkdsj7lTO4PSx5BtPzWqqBT",
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
         "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
         "options": {}
       },
@@ -220,11 +220,11 @@
         2480,
         920
       ],
-      "id": "ad97f700-7df4-4fb9-a682-74dc1a551184"
+      "id": "8f6c61e1-da45-4a07-8162-1352e201d6b6"
     },
     {
       "parameters": {
-        "webhookUri": "https://discord.com/api/webhooks/1004969283945758730/hmizyLJtct7Umt4pIYl1g54ocZRaQzGYOvggnoAJQ7oa3xkdsj7lTO4PSx5BtPzWqqBT",
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
         "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
         "options": {}
       },
@@ -235,11 +235,11 @@
         2480,
         720
       ],
-      "id": "afc8b721-9fe9-4c14-846b-a404ea7caf0f"
+      "id": "f2d9240b-9ee2-4374-ab56-f27f3a2c3ee8"
     },
     {
       "parameters": {
-        "webhookUri": "https://discord.com/api/webhooks/1004969283945758730/hmizyLJtct7Umt4pIYl1g54ocZRaQzGYOvggnoAJQ7oa3xkdsj7lTO4PSx5BtPzWqqBT",
+        "webhookUri": "https://discordapp.com/api/webhooks/1001484765238673468/0nmvT5VexRkmVFbmqax0mrJ-UU7sNi2_HbwPVoQ0jxhsRYowsdOqX5YI5rf81r12PfSO",
         "text": "={{$json[\"Result\"][\"Name\"]}}: {{$json[\"Result\"][\"Balance\"]}} - CTSC {{$json[\"Result\"][\"Phone\"]}}",
         "options": {}
       },
@@ -250,7 +250,7 @@
         2480,
         480
       ],
-      "id": "bc8a49a4-4288-4b54-9ade-ab8d7408f2b5"
+      "id": "8b8fcb3c-5117-4be4-a0b5-811b2b95d9c9"
     },
     {
       "parameters": {
@@ -264,7 +264,7 @@
         1160,
         560
       ],
-      "id": "9777e8c5-4f8d-45e4-9909-6b73b7edb3b7"
+      "id": "4063115b-c90e-4fe4-8861-09fd2ce6a0f1"
     },
     {
       "parameters": {
@@ -278,14 +278,14 @@
           ]
         }
       },
-      "name": "Every 10 Mins",
+      "name": "Every 5 Mins",
       "type": "n8n-nodes-base.cron",
       "typeVersion": 1,
       "position": [
         1460,
         260
       ],
-      "id": "6b4c3f82-3795-4d2b-9f11-4aba771811b7"
+      "id": "c22fc52d-bb71-4c3c-b966-5c59e837bae5"
     }
   ],
   "pinData": {},
@@ -455,7 +455,7 @@
         ]
       ]
     },
-    "Every 10 Mins": {
+    "Every 5 Mins": {
       "main": [
         [
           {
@@ -469,7 +469,7 @@
   },
   "active": true,
   "settings": {},
-  "id": 4,
+  "id": 5,
   "meta": {
     "instanceId": "a674d506978da3053e5a404a62f6bcea6ac6137540c0d2713115cca5162ccd13"
   },
