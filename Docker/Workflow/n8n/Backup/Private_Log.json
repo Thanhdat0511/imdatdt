@@ -1,0 +1,99 @@
+{
+  "name": "Private Log",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "099c08a7-0a10-4df1-a1c5-582218c99834",
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 5,
+              "unit": "minutes"
+            }
+          ]
+        }
+      },
+      "id": "7f73bed6-5c67-4373-ad40-95391dae27eb",
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        540,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://103.142.139.24:1337/balance?token=b404d5779c966af0753bfd98c338b0da",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "id": "e6b7c456-4b14-487e-9a11-0213f9839528",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        760,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1022387812567359549/5wftxFloPQ1nR-94-5AzFyogRlXh0Oii1yk-U2w3k6dugL65lIwOPpcRKIzXPy4ibuPO",
+        "text": "=Số dư: {{$node[\"HTTP Request\"].json[\"balance\"]}}",
+        "options": {}
+      },
+      "id": "de281144-462c-4afc-a9d6-0979a4f1cba2",
+      "name": "Discord",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        980,
+        300
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Cron": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "id": 11,
+  "meta": {
+    "instanceId": "b71f8622c6c36cbe3f1931f1c7fd66069c61e9582e1552de85947a34a6e1e438"
+  },
+  "tags": []
+}

@@ -1,16 +1,16 @@
 {
-  "name": "Toản Log",
+  "name": "Toan Log",
   "nodes": [
     {
       "parameters": {},
+      "id": "6d1cfd7c-2326-4fdc-8a22-e0a8d385d649",
       "name": "Start",
       "type": "n8n-nodes-base.start",
       "typeVersion": 1,
       "position": [
-        -560,
-        120
-      ],
-      "id": "234eeb57-b0ea-47a6-99e3-1ea06c70bd23"
+        240,
+        300
+      ]
     },
     {
       "parameters": {
@@ -22,10 +22,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        240,
-        120
+        1740,
+        520
       ],
-      "id": "0a5f68f1-adc0-4155-a1dd-2e7efa0c2ee0"
+      "id": "c7d32ad1-b828-45a4-a122-e5d9c8b568b9"
     },
     {
       "parameters": {
@@ -37,14 +37,14 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        240,
-        340
+        1740,
+        740
       ],
-      "id": "7aab66f4-0f64-4814-be6d-8eef8fd57b59"
+      "id": "ecec1e89-d890-40b1-907d-b9acb61b0827"
     },
     {
       "parameters": {
-        "url": "https://chothuesimcode.com/api?act=account&apik=7219534ada6a4fa3",
+        "url": "https://chothuesimcode.com/api?act=account&apik=96b0327c7693d337",
         "allowUnauthorizedCerts": true,
         "options": {}
       },
@@ -52,14 +52,14 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        0,
-        120
+        1500,
+        520
       ],
-      "id": "0791bf27-bfa9-408a-8648-9417f128aff4"
+      "id": "16dc50f5-a5eb-48c3-9dcb-3eb8b3bf7d4e"
     },
     {
       "parameters": {
-        "url": "https://chothuesimcode.com/api?act=account&apik=732fd92558fbe874",
+        "url": "https://chothuesimcode.com/api?act=account&apik=d9185ebe2ac9cfbd",
         "allowUnauthorizedCerts": true,
         "options": {}
       },
@@ -67,14 +67,14 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        0,
-        340
+        1500,
+        740
       ],
-      "id": "383daee4-78c6-4b78-98e4-21e03aed3780"
+      "id": "1aa52fec-cba9-4815-886d-564d8f13562d"
     },
     {
       "parameters": {
-        "url": "https://chothuesimcode.com/api?act=account&apik=ef7672a58c9d1183",
+        "url": "https://chothuesimcode.com/api?act=account&apik=207f7a553222559f",
         "allowUnauthorizedCerts": true,
         "options": {}
       },
@@ -82,10 +82,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        0,
-        540
+        1500,
+        940
       ],
-      "id": "94f3fc29-a691-4ee8-b35e-8255d2fa2f2f"
+      "id": "00cbc132-a7eb-461c-a3ce-473b190b47c0"
     },
     {
       "parameters": {
@@ -97,14 +97,14 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        240,
-        540
+        1740,
+        940
       ],
-      "id": "e8afd1a8-cd8c-4119-86c9-97c7f9459af1"
+      "id": "e06f838e-3c4b-4274-95ab-56146dd184ee"
     },
     {
       "parameters": {
-        "url": "https://chothuesimcode.com/api?act=account&apik=79160e664af53344",
+        "url": "https://chothuesimcode.com/api?act=account&apik=7f31c363a483cb18",
         "allowUnauthorizedCerts": true,
         "options": {}
       },
@@ -112,10 +112,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        0,
-        760
+        1500,
+        1160
       ],
-      "id": "889a2f85-485a-413d-a02e-df96c57f0783"
+      "id": "191c6785-0c69-4a50-a010-7b8882e516f2"
     },
     {
       "parameters": {
@@ -127,10 +127,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        240,
-        760
+        1740,
+        1160
       ],
-      "id": "ecfd905d-481e-4cd5-8cfa-ea532278fb2d"
+      "id": "d0517b83-e416-461d-a074-8bdfdb46eed5"
     },
     {
       "parameters": {
@@ -142,10 +142,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        540,
-        1000
+        2040,
+        1400
       ],
-      "id": "e600f174-33ef-4521-9e3c-9f17dcaae30f"
+      "id": "19a91935-b02c-4e9f-8415-5bcaa7be6ccc"
     },
     {
       "parameters": {
@@ -157,10 +157,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        540,
-        780
+        2040,
+        1180
       ],
-      "id": "c13a706f-a308-45fc-b880-af6521fa0ce3"
+      "id": "558a8d09-cee2-4c27-927e-980edb1e5820"
     },
     {
       "parameters": {
@@ -172,10 +172,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        540,
-        580
+        2040,
+        980
       ],
-      "id": "47d3dbc9-b9b6-42ba-866c-489499774476"
+      "id": "8cccb62f-c4e4-4f81-99f8-b29cc8c46f64"
     },
     {
       "parameters": {
@@ -187,10 +187,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        540,
-        340
+        2040,
+        740
       ],
-      "id": "33187af7-2907-4164-ae3b-48013492f92d"
+      "id": "69f4cced-4310-4d27-b7f2-63e28fb7570b"
     },
     {
       "parameters": {
@@ -202,10 +202,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        780,
-        1000
+        2280,
+        1400
       ],
-      "id": "450e3b1f-5a42-4ce6-955a-dd3f1e8332f5"
+      "id": "6d6f4fd4-ef12-4fa4-bea9-a9aa4e2c0ed8"
     },
     {
       "parameters": {
@@ -217,10 +217,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        780,
-        780
+        2280,
+        1180
       ],
-      "id": "a4927a9b-bf20-4368-bd1f-0feccdb2570b"
+      "id": "a4ac2722-38c3-46ed-a47e-569573828e46"
     },
     {
       "parameters": {
@@ -232,10 +232,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        780,
-        580
+        2280,
+        980
       ],
-      "id": "e98d72ff-252e-409a-aaee-61a102c96515"
+      "id": "8ea87287-869e-48f1-b589-574bbb3bd54a"
     },
     {
       "parameters": {
@@ -247,10 +247,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        780,
-        340
+        2280,
+        740
       ],
-      "id": "3313abbb-407a-431c-84e4-4eaa798d0413"
+      "id": "08bddbf8-6546-4cd0-bd6d-3421b096638c"
     },
     {
       "parameters": {
@@ -261,10 +261,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -540,
-        420
+        960,
+        820
       ],
-      "id": "9fbb5980-71da-495d-9821-32c3a78e1ca4"
+      "id": "f0fdf1ac-a6cb-43ea-9887-59fc8b5e6b92"
     },
     {
       "parameters": {
@@ -278,14 +278,14 @@
           ]
         }
       },
-      "name": "Every 10 Mins",
+      "name": "Every 5 Mins",
       "type": "n8n-nodes-base.cron",
       "typeVersion": 1,
       "position": [
-        -240,
-        120
+        1260,
+        520
       ],
-      "id": "a8bad3d7-d26b-41a6-bc40-78357b0bc9ad"
+      "id": "4ae80c0d-9858-4adc-afae-722b0a50e888"
     }
   ],
   "pinData": {},
@@ -455,7 +455,7 @@
         ]
       ]
     },
-    "Every 10 Mins": {
+    "Every 5 Mins": {
       "main": [
         [
           {
@@ -467,19 +467,18 @@
       ]
     }
   },
-  "active": true,
-  "settings": {
-    "timezone": "Asia/Saigon",
-    "saveExecutionProgress": "DEFAULT",
-    "errorWorkflow": "14"
+  "active": false,
+  "settings": {},
+  "id": 5,
+  "meta": {
+    "instanceId": "b71f8622c6c36cbe3f1931f1c7fd66069c61e9582e1552de85947a34a6e1e438"
   },
-  "id": 2,
   "tags": [
     {
       "id": "1",
       "name": "Production",
-      "createdAt": "2022-07-26T13:55:17.879Z",
-      "updatedAt": "2022-07-26T13:55:17.879Z"
+      "createdAt": "2022-09-07T04:17:52.134Z",
+      "updatedAt": "2022-09-07T04:17:52.134Z"
     }
   ]
 }

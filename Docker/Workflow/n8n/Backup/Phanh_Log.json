@@ -3,14 +3,14 @@
   "nodes": [
     {
       "parameters": {},
+      "id": "3c2d96e4-d905-4b3b-bd56-9c9dfb486a49",
       "name": "Start",
       "type": "n8n-nodes-base.start",
       "typeVersion": 1,
       "position": [
-        -560,
-        120
-      ],
-      "id": "cb2c27c6-235d-4583-8dbb-a26a0c5f38ff"
+        240,
+        300
+      ]
     },
     {
       "parameters": {
@@ -22,10 +22,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        240,
-        120
+        2380,
+        720
       ],
-      "id": "21eb1b10-b6a3-4c0a-8091-0792d8f67de5"
+      "id": "95eae91b-7046-4426-a2a5-376c48e63da6"
     },
     {
       "parameters": {
@@ -37,10 +37,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        240,
-        340
+        2380,
+        940
       ],
-      "id": "a5d8e109-590a-4fa0-a686-475be7075267"
+      "id": "80f7608d-8231-4e76-8797-fa6d36b1414a"
     },
     {
       "parameters": {
@@ -52,10 +52,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        0,
-        120
+        2140,
+        720
       ],
-      "id": "495452df-7b65-4117-8c14-7f732ada498b"
+      "id": "1968881e-175c-46e1-b3c3-f3244f040776"
     },
     {
       "parameters": {
@@ -67,10 +67,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        0,
-        340
+        2140,
+        940
       ],
-      "id": "fd710d4b-8482-47c8-84a8-55e1ee18dea9"
+      "id": "d32a5224-7e32-4541-a748-9c1d71f84890"
     },
     {
       "parameters": {
@@ -82,10 +82,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        0,
-        540
+        2140,
+        1140
       ],
-      "id": "64c3f2f8-3f56-4c98-88cd-e3d7ae72d7ff"
+      "id": "50c03cb9-7c10-4473-8df6-8918c59742ec"
     },
     {
       "parameters": {
@@ -97,10 +97,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        240,
-        540
+        2380,
+        1140
       ],
-      "id": "e98acb09-ec02-4676-a8d8-ff844140e6b0"
+      "id": "85529f24-094f-4a97-bd94-26aab4b38c4b"
     },
     {
       "parameters": {
@@ -112,10 +112,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        0,
-        760
+        2140,
+        1360
       ],
-      "id": "63cb385c-d046-41d2-bba9-78ebbfa62c8d"
+      "id": "ee8680c6-7f49-4fe7-a573-d6a7eb5ad755"
     },
     {
       "parameters": {
@@ -127,10 +127,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        240,
-        760
+        2380,
+        1360
       ],
-      "id": "581995b2-dfc2-4834-b695-5b5d62cb261d"
+      "id": "e3c12c6c-296b-4c53-a173-02589f6ef97b"
     },
     {
       "parameters": {
@@ -142,10 +142,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        540,
-        1000
+        2680,
+        1600
       ],
-      "id": "1686ff22-aed7-4d21-a6b0-c78a548095fc"
+      "id": "0f270be3-a96a-46b0-885e-053280020251"
     },
     {
       "parameters": {
@@ -157,10 +157,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        540,
-        780
+        2680,
+        1380
       ],
-      "id": "3e687702-d3e2-4def-8f08-6fb3ae9011cf"
+      "id": "7833a160-eb19-4886-8b0d-9f8fe687cd60"
     },
     {
       "parameters": {
@@ -172,10 +172,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        540,
-        580
+        2680,
+        1180
       ],
-      "id": "800d24db-7af5-4bf2-bf8e-1560cd517dc3"
+      "id": "647c25d7-3a12-481d-8914-1327fc81e8cd"
     },
     {
       "parameters": {
@@ -187,10 +187,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 1,
       "position": [
-        540,
-        340
+        2680,
+        940
       ],
-      "id": "87e87dfe-3712-4956-8333-8e107206f331"
+      "id": "e47d5c73-9442-42ce-a695-481769a561fa"
     },
     {
       "parameters": {
@@ -202,10 +202,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        780,
-        1000
+        2920,
+        1600
       ],
-      "id": "9619efd8-5d8a-42e4-a6a2-22fa63f64a00"
+      "id": "208f67e8-8e98-4bb9-a0ac-26d09641b721"
     },
     {
       "parameters": {
@@ -217,10 +217,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        780,
-        780
+        2920,
+        1380
       ],
-      "id": "ad66acf8-f6d2-4831-8a3a-3d18ceec9818"
+      "id": "5f553bd8-65b4-4ee3-9d3d-a1ec433b3173"
     },
     {
       "parameters": {
@@ -232,10 +232,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        780,
-        580
+        2920,
+        1180
       ],
-      "id": "9b3fa212-2240-462d-86ff-c9e81bd22b05"
+      "id": "2042c77f-987d-4701-9889-201160eaf2fe"
     },
     {
       "parameters": {
@@ -247,10 +247,10 @@
       "type": "n8n-nodes-base.discord",
       "typeVersion": 1,
       "position": [
-        780,
-        340
+        2920,
+        940
       ],
-      "id": "2c97b227-bfeb-4bcd-9470-dcbd923ac3d3"
+      "id": "567f515e-2149-488e-a2e8-826bb9eecb87"
     },
     {
       "parameters": {
@@ -261,10 +261,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -540,
-        420
+        1600,
+        1020
       ],
-      "id": "04cbfdc6-bf87-44a4-a57f-c1a99ae66576"
+      "id": "64dd6150-e36c-414a-8229-53056dd83f15"
     },
     {
       "parameters": {
@@ -282,10 +282,10 @@
       "type": "n8n-nodes-base.cron",
       "typeVersion": 1,
       "position": [
-        -240,
-        120
+        1900,
+        720
       ],
-      "id": "546bd378-b618-4e02-8406-653f61688c52"
+      "id": "929e4536-81ea-42f8-aedb-b2bf665d857c"
     }
   ],
   "pinData": {},
@@ -467,19 +467,18 @@
       ]
     }
   },
-  "active": true,
-  "settings": {
-    "timezone": "Asia/Saigon",
-    "saveExecutionProgress": "DEFAULT",
-    "errorWorkflow": "14"
+  "active": false,
+  "settings": {},
+  "id": 3,
+  "meta": {
+    "instanceId": "b71f8622c6c36cbe3f1931f1c7fd66069c61e9582e1552de85947a34a6e1e438"
   },
-  "id": 19,
   "tags": [
     {
       "id": "1",
       "name": "Production",
-      "createdAt": "2022-07-26T13:55:17.879Z",
-      "updatedAt": "2022-07-26T13:55:17.879Z"
+      "createdAt": "2022-09-07T04:17:52.134Z",
+      "updatedAt": "2022-09-07T04:17:52.134Z"
     }
   ]
 }

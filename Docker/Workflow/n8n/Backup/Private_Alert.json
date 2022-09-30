@@ -1,0 +1,130 @@
+{
+  "name": "Private Alert",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "6ab61f48-afb6-4dfd-a1a7-a3fdb26dbab4",
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://103.142.139.24:1337/balance?token=b404d5779c966af0753bfd98c338b0da",
+        "allowUnauthorizedCerts": true,
+        "options": {}
+      },
+      "id": "84a1255a-d00a-4f86-a0c7-e3d625995430",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        840,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 5,
+              "unit": "minutes"
+            }
+          ]
+        }
+      },
+      "id": "8d5a6454-72fa-4b56-8662-bcc0c7f57d5e",
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        620,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "webhookUri": "https://discord.com/api/webhooks/1021978496337186836/we43-LAAnJ7FAE4zdTYYubKgvB_Lx2cdnX-_ummtztXX7SR92AauGYLz6kE6iElLFOh_",
+        "text": "=Còn {{$node[\"HTTP Request\"].json[\"balance\"]}} thôi nạp đi",
+        "options": {}
+      },
+      "id": "e306ffbe-f0d5-4b74-a2b2-a355b9817b17",
+      "name": "Discord",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$node[\"HTTP Request\"].json[\"balance\"]}}",
+              "value2": 500000
+            }
+          ]
+        }
+      },
+      "id": "00b7a53e-3dc2-4395-86cb-74495870d909",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        300
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Cron": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "id": 10,
+  "meta": {
+    "instanceId": "b71f8622c6c36cbe3f1931f1c7fd66069c61e9582e1552de85947a34a6e1e438"
+  },
+  "tags": []
+}
