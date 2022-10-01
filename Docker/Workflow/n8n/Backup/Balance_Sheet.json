@@ -1,0 +1,88 @@
+{
+  "name": "Balance Sheet",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "5b350899-215b-4f5e-9e03-c0d24a5721fe",
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "number": [
+            {
+              "name": "H",
+              "value": 34243124
+            }
+          ],
+          "string": [
+            {
+              "name": "G",
+              "value": "Số dư site sim"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "aff2ea96-54f4-4db0-ac55-a28c8ad6f8ad",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        920,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "update",
+        "sheetId": "1HK5DJgWHC5dZECEmL1zWnQnSW2X6AOB9V1nqH3nqlZU",
+        "range": "A:H",
+        "key": "G",
+        "options": {}
+      },
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 2,
+      "position": [
+        1120,
+        320
+      ],
+      "id": "66130692-47b0-4b31-8e04-85d8926c1d6d",
+      "credentials": {
+        "googleApi": {
+          "id": "1",
+          "name": "GG SA"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": 12,
+  "meta": {
+    "instanceId": "b71f8622c6c36cbe3f1931f1c7fd66069c61e9582e1552de85947a34a6e1e438"
+  },
+  "tags": []
+}
